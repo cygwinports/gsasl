@@ -1,0 +1,7 @@
+category: Net
+requires: libgsasl7 libgcrypt-devel libkrb5-devel libidn-devel gettext
+external-source: gsasl
+sdesc: "GNU SASL library (development)"
+ldesc: "GNU SASL an implementation of the Simple Authentication and 
+Security Layer (SASL) framework, consisting of a library with several 
+plugins, and command-line application."

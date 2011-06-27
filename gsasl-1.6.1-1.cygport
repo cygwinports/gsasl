@@ -1,0 +1,21 @@
+DESCRIPTION="GNU SASL implementation"
+HOMEPAGE="http://www.gnu.org/s/gsasl/"
+SRC_URI="mirror://gnu/gsasl/${P}.tar.gz"
+
+PKG_NAMES="gsasl libgsasl7 libgsasl-common libgsasl-devel"
+gsasl_CONTENTS="usr/bin/gsasl.exe usr/share/doc/gsasl/ usr/share/locale/*/*/gsasl.mo usr/share/man/man1/"
+libgsasl7_CONTENTS="usr/bin/cyggsasl-7.dll"
+libgsasl_common_CONTENTS="usr/share/doc/libgsasl/ usr/share/locale/*/*/libgsasl.mo"
+libgsasl_devel_CONTENTS="usr/include/ usr/lib/ usr/share/info/ usr/share/man/man3/"
+
+
+CYGCONF_ARGS="--with-gssapi-impl=heimdal --disable-ld-version-script gl_cv_ld_output_def=no gl_cv_cc_visibility=no"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	cd ${S}/lib
+	docinto /libgsasl
+	dodoc AUTHORS COPYING.LIB ChangeLog NEWS README THANKS
+}
