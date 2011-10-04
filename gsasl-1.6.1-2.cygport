@@ -8,8 +8,13 @@ libgsasl7_CONTENTS="usr/bin/cyggsasl-7.dll"
 libgsasl_common_CONTENTS="usr/share/doc/libgsasl/ usr/share/locale/*/*/libgsasl.mo"
 libgsasl_devel_CONTENTS="usr/include/ usr/lib/ usr/share/info/ usr/share/man/man3/"
 
-
-CYGCONF_ARGS="--with-gssapi-impl=heimdal --disable-ld-version-script gl_cv_ld_output_def=no gl_cv_cc_visibility=no"
+# GSS_C_NT_HOSTBASED_SERVICE: defined as macro
+CYGCONF_ARGS="
+	--with-gssapi-impl=heimdal
+	--disable-ld-version-script
+	ac_cv_func_GSS_C_NT_HOSTBASED_SERVICE=yes
+	gl_cv_ld_output_def=no gl_cv_cc_visibility=no
+"
 
 src_install() {
 	cd ${B}

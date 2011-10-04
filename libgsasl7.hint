@@ -1,5 +1,5 @@
 category: Net
-requires: libgcrypt11 libgssapi2 libidn11 libintl8 libgsasl-common
+requires: libgcrypt11 libgssapi3 libidn11 libintl8 libgsasl-common
 external-source: gsasl
 sdesc: "GNU SASL library (runtime)"
 ldesc: "GNU SASL an implementation of the Simple Authentication and 
