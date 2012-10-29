@@ -1,11 +1,23 @@
-DESCRIPTION="GNU SASL implementation"
+NAME="gsasl"
+VERSION=1.8.0
+RELEASE=1
+CATEGORY="Net"
+SUMMARY="GNU SASL implementation"
+DESCRIPTION="GNU SASL an implementation of the Simple Authentication and
+Security Layer (SASL) framework, consisting of a library with several plugins,
+and command-line application."
 HOMEPAGE="http://www.gnu.org/s/gsasl/"
 SRC_URI="mirror://gnu/gsasl/${P}.tar.gz"
 
 PKG_NAMES="gsasl libgsasl7 libgsasl-common libgsasl-devel"
+gsasl_SUMMARY="GNU SASL command-line utility"
 gsasl_CONTENTS="usr/bin/gsasl.exe usr/share/doc/gsasl/ usr/share/locale/*/*/gsasl.mo usr/share/man/man1/"
+libgsasl7_SUMMARY="${SUMMARY} (runtime)"
+libgsasl7_REQUIRES="libgsasl-common"
 libgsasl7_CONTENTS="usr/bin/cyggsasl-7.dll"
+libgsasl_common_SUMMARY="${SUMMARY} (data)"
 libgsasl_common_CONTENTS="usr/share/doc/libgsasl/ usr/share/locale/*/*/libgsasl.mo"
+libgsasl_devel_SUMMARY="${SUMMARY} (development)"
 libgsasl_devel_CONTENTS="usr/include/ usr/lib/ usr/share/info/ usr/share/man/man3/"
 
 # GSS_C_NT_HOSTBASED_SERVICE: defined as macro
@@ -24,3 +36,5 @@ src_install() {
 	docinto /libgsasl
 	dodoc AUTHORS COPYING.LIB ChangeLog NEWS README THANKS
 }
+
+KEEP_LA_FILES="none"

@@ -1,6 +1,0 @@
-category: Net
-requires: libgnutls26 libgsasl7 libiconv2 libintl8 libreadline7
-sdesc: "GNU SASL command-line utility"
-ldesc: "GNU SASL an implementation of the Simple Authentication and 
-Security Layer (SASL) framework, consisting of a library with several 
-plugins, and command-line application."
