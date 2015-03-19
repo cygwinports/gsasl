@@ -1,0 +1,17 @@
+https://lists.gnu.org/archive/html/help-shishi/2014-07/txtXVHcyJSwaq.txt
+
+--- origsrc/gsasl-1.8.0/lib/gl/m4/gc.m4	2012-05-21 09:07:06.000000000 -0500
++++ src/gsasl-1.8.0/lib/gl/m4/gc.m4	2015-03-18 20:23:19.043177200 -0500
+@@ -12,10 +12,10 @@ AC_DEFUN([gl_GC],
+   if test "$libgcrypt" != no; then
+     AC_LIB_HAVE_LINKFLAGS([gcrypt], [gpg-error], [
+ #include <gcrypt.h>
+-/* GCRY_MODULE_ID_USER was added in 1.4.4 and gc-libgcrypt.c
++/* GCRY_MODULE_ID_USER was added in 1.4.4 (then dropped in 1.6) and gc-libgcrypt.c
+    will fail on startup if we don't have 1.4.4 or later, so
+    test for it early. */
+-#if !defined GCRY_MODULE_ID_USER
++#if !defined GCRY_MODULE_ID_USER && !defined GCRYPT_VERSION_NUMBER
+ error too old libgcrypt
+ #endif
+ ])
