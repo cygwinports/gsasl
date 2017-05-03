@@ -1,6 +1,6 @@
 NAME="gsasl"
 VERSION=1.8.0
-RELEASE=3
+RELEASE=4
 CATEGORY="Libs"
 SUMMARY="GNU SASL implementation"
 DESCRIPTION="GNU SASL an implementation of the Simple Authentication and
@@ -8,7 +8,10 @@ Security Layer (SASL) framework, consisting of a library with several plugins,
 and command-line application."
 HOMEPAGE="http://www.gnu.org/s/gsasl/"
 SRC_URI="mirror://gnu/gsasl/gsasl-${VERSION}.tar.gz"
-PATCH_URI="1.8.0-libgcrypt16.patch"
+PATCH_URI="
+	1.8.0-libgcrypt16.patch
+	1.8.0-gnulib-cygwin25.patch
+"
 
 PKG_NAMES="gsasl libgsasl7 libgsasl-common libgsasl-devel libgsasl-doc"
 gsasl_CATEGORY="Net"
